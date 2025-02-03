@@ -1,0 +1,35 @@
+.product-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-carousel > div {
+  text-align: left;
+}
+
+.buscar-position{
+  display: flex;
+  justify-content: center;
+}
+
+.buscar-width {
+  width: 30%;
+}
+
+.error {
+  font-size: x-small;
+  color: #810081;
+}
+
+input[matInput] {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid; /* Adjust color and thickness as needed */
+}
+input[matInput]:focus {
+  outline: none;
+  border-bottom: 2px solid #810081; /* Example: thicker blue border on focus */
+}

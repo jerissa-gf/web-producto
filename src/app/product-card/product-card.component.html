@@ -1,0 +1,24 @@
+<!--<div *ngFor="let item of producto">-->
+  <div class="product-card">
+    <div style="display: flex">
+      <img [src]="producto.imagen" class="product-image" />
+      <button
+        mat-fab
+        (click)="cambiarEstado()"
+        [style.color]="
+          estado === 'AGREGADO AL CARRITO' ? '#e14fcc' : 'white'
+        "
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+    <br />
+
+    <p class="p-estado">{{ estado }}</p>
+    <p>{{ producto.mensaje }}</p>
+    <hr />
+    <p>
+      <strong>Bs {{ producto.precio }}</strong>
+    </p>
+    <p class="producto-descripcion">{{ producto.descripcion }}</p>
+  </div>

@@ -1,0 +1,16 @@
+<br />
+
+<div class="buscar-position">
+    <input class="buscar-width" matInput type="text" [(ngModel)]="buscarProducto" placeholder="Buscar productos..." required minlength="3" #buscar="ngModel">
+
+    <div *ngIf="buscar.invalid && (buscar.dirty || buscar.touched)">
+        <mat-error class="error" *ngIf="buscar.hasError('required')">Product search is required.</mat-error>
+        <mat-error class="error" *ngIf="buscar.hasError('minlength')">Product search must be at least 3 characters long.</mat-error>
+    </div> 
+</div>
+
+<div class="product-list-container" style="display: grid; grid-template-columns: repeat(4, 1fr);">
+    <div *ngFor="let item of filtrarProducto">
+        <app-product-card [producto]="item"></app-product-card>
+    </div>
+</div>

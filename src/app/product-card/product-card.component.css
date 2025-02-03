@@ -1,0 +1,45 @@
+.p-estado {
+  color: blueviolet;
+  font-size: small;
+}
+
+.product-card {
+  margin: 70px;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.producto-descripcion {
+  font-size: x-small;
+}
+
+section {
+  display: table;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 100px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+}
