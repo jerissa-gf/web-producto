@@ -1,12 +1,17 @@
 <mat-toolbar>
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button (click)="navigateToProducts()">
+    <mat-icon>house</mat-icon>
   </button>
-  <span>PRODUCTOS</span>
+  <div class="nav-container">
+    <a (click)="navigateToProducts()">
+        Productos
+    </a>
+    <a (click)="navigateToPokemons()">
+        Pokemon
+    </a>
+  </div>
+  <span></span>
   <span class="spacer"></span>
-  <button mat-icon-button>
-    <mat-icon>search</mat-icon>
-  </button>
   <button mat-icon-button matBadge="{{ cantidadEnCarrito }}" matBadgeColor="warn">
     <mat-icon>shopping_cart</mat-icon>
   </button>  

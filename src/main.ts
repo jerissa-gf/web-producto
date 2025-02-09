@@ -4,6 +4,8 @@ import { AppComponent } from './app/app.component';
 import { AppRoutingModule } from './app/app-routing.module';
 import { importProvidersFrom } from '@angular/core';
 import { environment } from '../src/app/environments/environment';
+import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 if (environment.production) {
   enableProdMode();
@@ -12,5 +14,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(AppRoutingModule),
+    provideHttpClient(),
+    provideAnimations()
   ]
 }).catch(err => console.error(err));
