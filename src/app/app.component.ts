@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductListComponentComponent } from "./product-list-component/product-list-component.component";
-
 import { ProductService } from './services/product.service'; 
 
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
 
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, ProductListComponentComponent, MatToolbarModule, MatButtonModule, MatIconModule, MatBadgeModule],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, MatToolbarModule, MatIconModule, MatBadgeModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

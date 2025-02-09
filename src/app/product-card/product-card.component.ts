@@ -1,28 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { ProductService } from '../services/product.service';
-
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
 import { Product } from '../models/product';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-card',
+  standalone: true,
   imports: [FormsModule, CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })
-export class ProductCardComponent { //Este componente solo muestra un item
-
+export class ProductCardComponent {
   @Input() producto!: Product;
 
   estado: string = 'AGREGAR AL CARRITO';
 
-  //@Output() avisarAlPadreMensajeCambiado = new EventEmitter<string>();
-
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   agregarAlCarrito() {
     const producto = {
@@ -38,7 +37,10 @@ export class ProductCardComponent { //Este componente solo muestra un item
     } else {
       this.estado = 'AGREGAR AL CARRITO'
     }
-    //this.estado = this.estado === 'AGREGAR AL CARRITO' ? 'AGREGADO AL CARRITO' : 'AGREGAR AL CARRITO';
+  }
+
+  verDetalles() {
+    this.router.navigate(['/detalleProducto', this.producto.id]);
   }
 
 }
